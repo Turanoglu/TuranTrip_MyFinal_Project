@@ -1,0 +1,133 @@
+﻿@model TuranTrip.Models.Sınıflar.BlogYorumlar
+@*@{
+    TuranTrip.Models.Context c = new TuranTrip.Models.Context();
+}*@
+
+@{
+    ViewBag.Title = "BlogDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+
+
+
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <!---->
+
+    <style>
+        
+        
+    </style>
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+
+    </div>
+    <!--/header-->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                <div class="single-grid">
+                    @foreach (var x in Model.Deger1)
+                    {
+                        <img src="@x.BlogImage" alt="" style="margin-bottom:20px;" />
+
+                        <h3 style="color:red;">@x.Baslik</h3>
+                        <p style="color:black;">
+                            @x.Aciklama
+                        </p>
+                    }
+
+
+                </div>
+                <p style="color:blue;">Toplam Yorum(@Model.Deger2.ToList().Count)</p>
+                @foreach (var y in Model.Deger2)
+                {
+                    <ul style="border-color:black;" class="comment-list">
+
+                        <li>
+                            <img src="/web2/images/avatar.png" class="img-responsive" alt="">
+                            <div class="desc">
+                                <p style="color:rebeccapurple;">@y.KullaniciAdi: @y.Yorum</p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                }
+
+
+
+                @Html.Action("YorumYap", "Blog")
+            </div>
+            <div class="col-md-4 side-content">
+                <div class="recent">
+                    <h3 style="color:orangered" ;>İlgili Restaurantlar</h3>
+                    @foreach (var y in Model.restrnt)
+                    {
+                        <ul>
+                            <li><a style="color:black;" href="/RestOt/RestaurantDetay/@y.ID">@y.Baslik</a></li>
+
+                        </ul>
+
+                    }
+                    
+                        <a href="/RestOt/RestaurantListele/@Model.Deger1.FirstOrDefault().ID" class="link1">İlgli Tüm Restaurantları Gör</a>
+                    
+
+
+                </div>
+                <div class="recent">
+                    <h3 style="color:orangered;">İlgili Oteller</h3>
+                    @foreach (var x in Model.otel)
+                    {
+                        <ul>
+                            <li><a style="color:black;" href="/RestOt/OtelDetay/@x.ID">@x.Baslik</a></li>
+                            @*<li><a href="#">Peter Doe </a> on <a href="#"> Photography</a></li>
+                     on <a href="#">Hello World!</a>
+                <li><a href="#">Steve Roberts  </a> on <a href="#">HTML5/CSS3</a></li>*@
+                        </ul>
+                    }
+
+                    <a href="/RestOt/OtelListele/@Model.Deger1.FirstOrDefault().ID" class="link1">İlgli Tüm Otelleri Gör</a>
+
+                </div>
+                <div class="clearfix"></div>
+
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+
+</body>
+
+
+</html>
+<!---->

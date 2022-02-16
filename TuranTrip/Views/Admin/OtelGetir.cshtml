@@ -1,0 +1,47 @@
+﻿@model TuranTrip.Models.Sınıflar.Otel
+@{
+    ViewBag.Title = "OtelGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>OtelGetir</h2>
+
+@using (Html.BeginForm("OtelGuncelle", "Admin", FormMethod.Post))
+{
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+        @Html.LabelFor(x => x.Baslik)
+        @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Aciklama)
+        @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+        <br />
+        <label>Blog Seç</label>
+        <br />
+        <select id="" name="BlogId">
+            <option value="@Model.Blog.ID">@Model.Blog.Baslik</option>
+            @foreach (var item in (IEnumerable<SelectListItem>)ViewBag.Bloglar)
+            {
+                <option value="@item.Value">@item.Text</option>
+            }
+
+
+        </select>
+        <br />
+        <br />
+        @Html.LabelFor(x => x.OtelImage)
+        @Html.TextBoxFor(x => x.OtelImage, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.OtelPuan)
+        @Html.TextBoxFor(x => x.OtelPuan, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.OtelTemizlik)
+        @Html.TextBoxFor(x => x.OtelTemizlik, new { @class = "form-control" })
+
+
+        <button class="btn btn-success">Otel Güncelle</button>
+
+    </form>
+}

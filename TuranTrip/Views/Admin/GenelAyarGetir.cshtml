@@ -1,0 +1,30 @@
+﻿@model TuranTrip.Models.Sınıflar.GenelAyarlar
+@{
+    ViewBag.Title = "GenelAyarGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>GenelAyarGetir</h2>
+@using (Html.BeginForm("GenelAyarGuncelle", "Admin", FormMethod.Post))
+{
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+        @Html.LabelFor(x => x.Logo)
+        @Html.TextBoxFor(x => x.Logo, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.SuperBaslik)
+        @Html.TextBoxFor(x => x.SuperBaslik, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.SuperAciklama)
+        @Html.TextBoxFor(x => x.SuperAciklama, new { @class = "form-control" })
+        <br />    
+        @Html.LabelFor(x => x.Whatsapp)
+        @Html.TextBoxFor(x => x.Whatsapp, new { @class = "form-control" })
+        <br />  
+        <button class="btn btn-success">GenelAyar Güncelle</button>
+
+    </form>
+}
+

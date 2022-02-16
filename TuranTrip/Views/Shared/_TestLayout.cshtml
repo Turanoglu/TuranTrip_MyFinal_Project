@@ -1,0 +1,109 @@
+﻿
+@{
+    TuranTrip.Models.Context c = new TuranTrip.Models.Context();
+}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Free Easy-Trip Website Template | Home :: w3layouts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/web/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="~/web/js/jquery.min.js"></script>
+    <script src="~/web/js/responsiveslides.min.js"></script>
+
+    <script>
+        // You can also use "$(window).load(function() {"
+        $(function () {
+            // Slideshow 1
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+    <style>
+        #hey {
+            /* border: 10px solid brown;
+            padding: 30px;
+            margin: 20px;*/
+            /*background-image: url('/web/images/backgroundimg3.jpg')*/
+            background-color:lightgray;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+
+            <div class="logo"><a href="/Default/Index"> <img src="@c.GenelAyarlars.FirstOrDefault().Logo" alt="" style="margin-bottom:20px; width:300px; height:84px;" /></a></div>
+
+            <div class="con-right">
+                <div class="grid1-l-img">
+                    <img src="~/web/images/contact.png" alt="">
+                </div>
+                <div class="grid1-l-desc">
+                    <p>Whatsapp : @c.GenelAyarlars.FirstOrDefault().Whatsapp</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a class="active" href="/Default/Index">Anasayfa</a></li>
+                <li><a class="hsubs" href="/About/Index">Hakkımızda</a></li>
+                <li>
+                    <a class="hsubs" href="#"><i class=""></i>Rehber</a>
+                    <ul class="subs">
+                        <li><a href="/RestOt/OtelList/">Oteller</a></li>
+                        <li><a href="/RestOt/RestaurantList/">Restaurantlar</a></li>
+
+                    </ul>
+                </li>
+                <li><a class="hsubs" href="/Blog/Index">Blogum</a></li>
+                <li><a href="/Default/IletisimDefault">İletişim</a></li>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class"content" style="" id="hey">
+        @RenderBody()
+        @Html.Action("Icons", "Default")
+    </div>
+    
+    
+    
+
+
+
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>&copy; 2020 Turan-Trip. All Rights Reserved | Design by <a href="http://w3layouts.com">W3Layouts</a></p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+

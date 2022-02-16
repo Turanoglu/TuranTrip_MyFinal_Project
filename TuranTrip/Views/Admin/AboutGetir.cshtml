@@ -1,0 +1,28 @@
+﻿@model TuranTrip.Models.Sınıflar.Hakkimizda
+@{
+    ViewBag.Title = "AboutGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>About Güncelleme Sayfası</h2>
+@using (Html.BeginForm("AboutGuncelle", "Admin", FormMethod.Post))
+{
+    <form class="form-group" method="post">
+        @Html.LabelFor(x => x.ID)
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+        @Html.LabelFor(x => x.FotoUrl)
+        @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(x => x.Aciklama)
+        @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })
+        <br />
+
+
+        <button class="btn btn-success">About Güncelle</button>
+
+        
+    </form>
+
+}
+

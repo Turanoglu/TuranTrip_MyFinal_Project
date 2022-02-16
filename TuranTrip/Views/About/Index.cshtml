@@ -1,0 +1,25 @@
+﻿
+@using TuranTrip.Models.Sınıflar
+@model List<Hakkimizda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+
+<div class="content" style="background-color:lightgray;">
+    <div class="wrap">
+        <div class="about">
+            <h3>About</h3>
+
+            @foreach (var x in Model)
+            {
+                <img src="@x.FotoUrl" alt="" />
+
+                <p style="color:black; font-size:16px;">@x.Aciklama</p>
+            }
+
+        </div>
+    </div>
+</div>
+

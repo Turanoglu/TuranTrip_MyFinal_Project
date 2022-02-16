@@ -1,0 +1,116 @@
+﻿@model TuranTrip.Models.Sınıflar.iletisim
+@{
+    ViewBag.Title = "IletisimDefault";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+@*<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    /* Style inputs */
+    input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+    }
+
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    /* Style the container/contact section */
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 10px;
+    }
+
+    /* Create two columns that float next to eachother */
+    .column {
+        float: left;
+        width: 50%;
+        margin-top: 6px;
+        padding: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+</style>*@
+<div class="container">
+    <div style="text-align:left">
+        <h2>Bize Ulaşın</h2>
+        <p>Bir mesaj bırakın..</p>
+        <br />
+        <br />
+
+    </div>
+    <div class="row">
+        <div class="column">
+            <img src="~/web/images/ContactPhoto.jpg" style="width:70%">
+        </div>
+        @using (Html.BeginForm("IletisimDefault", "Default", FormMethod.Post))
+        {
+
+            @Html.ValidationSummary(false)
+
+
+            <div>
+                <div style=""></div>
+            </div>
+
+            <table class="table padding" style="width:100%; height:70%;">
+                <tr>
+                    <td>Ad Soyad</td>
+                    <td>@(Html.EditorFor(p=>p.AdSoyad))</td>
+                    <td>@(Html.ValidationMessageFor(p => p.AdSoyad))</td>
+                </tr>
+                
+                <tr>
+                    <td>Mail</td>
+                    <td>@(Html.EditorFor(p => p.Mail))</td>
+                    <td>@(Html.ValidationMessageFor(p => p.Mail))</td>
+                </tr>
+                
+                <tr>
+                    <td>Mesaj</td>
+                    <td>@(Html.EditorFor(p => p.Mesaj))</td>
+                    <td>@(Html.ValidationMessageFor(p => p.Mesaj))</td>
+                </tr>
+                
+            </table>
+            <br />
+            <input style="margin-bottom:10px;" class="btn btn-success" type="submit" value="Gönder" />
+        }
+        @*<div class="column">
+          <form action="/Default/IletisimDefault/" method="post">
+              <label for="fname">Ad Soyad</label>
+              <input type="text" id="fname" name="AdSoyad" placeholder="Ad Soyad..">
+              <label for="lname">Mail</label>
+              <input type="text" id="lname" name="Mail" placeholder="Mail.">
+
+              <label for="subject">Mesaj</label>
+              <textarea id="subject" name="Mesaj" placeholder="Mesaj.." style="height:170px"></textarea>
+              <input type="submit" value="Gönder">
+          </form>
+        </div>*@
+
+    </div>
+</div>
+

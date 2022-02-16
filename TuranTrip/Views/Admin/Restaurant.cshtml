@@ -1,0 +1,62 @@
+﻿@*@using TuranTrip.Models.Sınıflar
+    @model List<Restaurant>*@
+
+@using TuranTrip.Models.Sınıflar;
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<Restaurant>
+@*@model TuranTrip.Models.Sınıflar.Restaurant*@
+@{
+    ViewBag.Title = "Restaurant";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Restaurant Ekle</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>BlogID</th>
+        <th>Restaurant Resmi</th>
+        <th>Servis Hızı</th>
+        <th>Restaurant Puanı</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+
+            <td>@x.ID</td>
+            <td>@x.Baslik</td>
+            <td>@x.Aciklama</td>
+            <td>@x.BlogId</td>
+            <td>@x.RestaurantImage</td>
+            <td>@x.ServisHızı</td>
+            <td>@x.RestaurantPuan</td>
+            <td><a href="/Admin/RestaurantSil/@x.ID" class=" btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/RestaurantGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
+            @*<div class="form-group">
+                    <label for="Role">Yetki</label>
+                    <select name="Role">
+                        <option value="@Model.Role">@Model.Role</option>
+                        @foreach (var item in Enum.GetNames(typeof(MVC_Ecommerce.MODEL.Entities.Role)))
+                        {
+                <option value="@item">@item</option>                }
+                    </select>
+                </div>*@
+
+
+
+        </tr>
+    }
+</table>
+<div>
+    @Html.PagedListPager(Model, page => Url.Action("Restaurant", "Admin", new { page }), PagedListRenderOptions.TwitterBootstrapPagerAligned)
+</div>
+<a href="/Admin/YeniRestaurant/" class="btn btn-primary">Yeni Restaurant</a>
+
+

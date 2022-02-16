@@ -1,0 +1,24 @@
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+@using TuranTrip.Models.Sınıflar
+@model List<Blog>
+<div class="con-bot">
+    @foreach (var x in Model)
+    {
+        <div class="left">
+            <div class="bot-left">
+                <a href="/Blog/BlogDetay/@x.ID"><img src="@x.BlogImage" style="width:300px; height:150px;" alt="" /></a>
+            </div>
+            <div class="left-text">
+                <h4><i class="fa fa-car"></i>@x.Baslik</h4>
+                <span class="doller">@x.Tarih.ToString("dd.MM.yyyy")</span>
+                <p>@x.Aciklama.Substring(0, 47)</p>
+                <p><a href="/Blog/BlogDetay/@x.ID"><span class="read">Devamını Oku >></span></a></p>
+            </div>
+        </div>
+    }
+
+    @Html.Action("Partial2", "Default")
+
+
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TuranTrip", "TuranTrip\TuranTrip.csproj", "{0175ECA0-5840-4A2A-950C-73391F3D047D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0175ECA0-5840-4A2A-950C-73391F3D047D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0175ECA0-5840-4A2A-950C-73391F3D047D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0175ECA0-5840-4A2A-950C-73391F3D047D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0175ECA0-5840-4A2A-950C-73391F3D047D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4CD9A009-629D-4FB2-9C39-A97045BF4B90}
+	EndGlobalSection
+EndGlobal

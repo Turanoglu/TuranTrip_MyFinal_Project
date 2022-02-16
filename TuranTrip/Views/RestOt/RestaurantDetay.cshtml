@@ -1,0 +1,139 @@
+﻿@using TuranTrip.Models.Sınıflar;
+@model List<Restaurant>
+@*@model TuranTrip.Models.Sınıflar.RestOt*@
+@{
+    ViewBag.Title = "RestaurantDetay";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Personal Blog a Blogging Category Flat Bootstarp  Responsive Website Template | Single :: w3layouts</title>
+    <link href="/web2/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/web2/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <!---->
+
+
+    <style>
+        #heyy {
+            background: #cce5ff;
+            margin: 5px;
+        }
+
+        
+        .checked {
+            color: orange;
+        }
+    </style>
+    
+
+
+
+
+</head>
+<body>
+    <!---header---->
+    <div class="header">
+
+    </div>
+    <!--/header-->
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                <div class="single-grid">
+                    @foreach (var x in Model)
+
+                    {
+                        <img src="@x.RestaurantImage" alt="" style="margin-bottom:20px;" />
+
+                        <h3 style="color:red;">@x.Baslik</h3>
+                        <p style="color:black;">
+                            @x.Aciklama
+                        </p>
+
+
+                    }
+
+
+                </div>
+
+
+
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="blog-sidebar padd-4">
+                    @*<div class="sidebar_search sidebar-padd mar-1">
+                    <form action="#">
+                        <input type="text" placeholder="Search....">
+                        <button class="tran3s color1_bg"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>  End of .sidebar_styleOne*@
+
+                    <div class="category-style-one sidebar-padd mar-1">
+                        @*<div class="inner-title">
+                            <h3>Restaurant Ozellikleri</h3>
+                        </div>*@
+                        <h2 style="color:orangered;">Restaurant Özellikleri</h2>
+                        <p></p>
+
+                        <ul>
+                            @foreach (var y in Model)
+                            {
+                                <div>
+                                    <p style="color:green;">Restaurant Puan:</p>
+                                </div>
+
+                                for (int i = 1; i <= y.RestaurantPuan; i++)
+                                {
+                                    <li id="heyy" class="fa fa-star checked">@i</li>
+
+                                }
+                                <br />
+                                <br />
+
+                                <div>
+                                    <p style="color:green;">Servis Hız:</p>
+                                </div>
+                                for (int i = 1; i <= y.ServisHızı; i++)
+                                {
+                                    <li id="heyy" class="fa fa-star checked">@i</li>
+                                }
+
+
+
+
+
+
+                            }
+
+                        </ul>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+
